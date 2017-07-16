@@ -1,0 +1,6 @@
+C:\Users\Дмитрий\Documents\Visual Studio 2013\Projects\Offline_task\Offline_task\bin\Debug\Offline_task.exe.config
+C:\Users\Дмитрий\Documents\Visual Studio 2013\Projects\Offline_task\Offline_task\bin\Debug\Offline_task.exe
+C:\Users\Дмитрий\Documents\Visual Studio 2013\Projects\Offline_task\Offline_task\bin\Debug\Offline_task.pdb
+C:\Users\Дмитрий\Documents\Visual Studio 2013\Projects\Offline_task\Offline_task\obj\Debug\Offline_task.exe
+C:\Users\Дмитрий\Documents\Visual Studio 2013\Projects\Offline_task\Offline_task\obj\Debug\Offline_task.pdb
+C:\Users\Дмитрий\Documents\Visual Studio 2013\Projects\Offline_task\Offline_task\obj\Debug\Offline_task.csprojResolveAssemblyReference.cache
