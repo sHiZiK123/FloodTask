@@ -10,8 +10,8 @@ namespace Offline_task {
         static int maxY;
         static int maxX;
 
-        public int GetMaxX { get { return maxY; } }
-        public int GetMaxY { get { return maxX; } }
+        public int GetMaxX { get { return maxX; } }
+        public int GetMaxY { get { return maxY; } }
         public Cell[,] GetMatrix { get { return matrix; } }
 
         public Matrix(int _maxX, int _maxY) {
