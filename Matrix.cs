@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 namespace Offline_task {
     class Matrix {
         static Cell[,] matrix;
-        static int maxX;
         static int maxY;
+        static int maxX;
 
-        public int GetMaxX { get { return maxX; } }
-        public int GetMaxY { get { return maxY; } }
+        public int GetMaxX { get { return maxY; } }
+        public int GetMaxY { get { return maxX; } }
         public Cell[,] GetMatrix { get { return matrix; } }
 
         public Matrix(int _maxX, int _maxY) {
-            maxX = _maxX;
-            maxY = _maxY;
-            matrix = new Cell[maxX,maxY];
+            maxY = _maxX;
+            maxX = _maxY;
+            matrix = new Cell[maxY,maxX];
 
             for (int i = 0; i < maxY; i++)
                 for (int j = 0; j < maxX; j++) {
@@ -27,13 +27,13 @@ namespace Offline_task {
         }
 
         void RefreshMaxValues(List<Point> allPoints) {
-            maxX = allPoints.Max(a => a.Y) + 2;
-            maxY = allPoints.Max(a => a.X) + 2;
+            maxY = allPoints.Max(a => a.Y) + 2;
+            maxX = allPoints.Max(a => a.X) + 2;
 
-            matrix = new Cell[maxX, maxY];
+            matrix = new Cell[maxY, maxX];
 
-            for (int i = 0; i < maxX; i++)
-                for (int j = 0; j < maxY; j++) {
+            for (int i = 0; i < maxY; i++)
+                for (int j = 0; j < maxX; j++) {
                     matrix[i, j] = new Cell();
                     matrix[i, j].CellState = States.Air;
                 }
@@ -43,7 +43,7 @@ namespace Offline_task {
             for (int i = 0; i < maxY; i++)
                 for (int j = 0; j < maxX; j++) {
                     if (i == 0 || j == 0 || j == maxX - 1 || i == maxY - 1) {
-                        GetMatrix[i, j].CellState = States.Water;
+                        matrix[i, j].CellState = States.Water;
                     }
                 }
         }
@@ -97,8 +97,8 @@ namespace Offline_task {
                             if (allPoints[k].X > allPoints[allWalls[i].FirstPoint].X) ++allPoints[k].X;
                         }
                     }
-                    maxY = allPoints.Max(a => a.Y) + 2;
                     maxX = allPoints.Max(a => a.X) + 2;
+                    maxY = allPoints.Max(a => a.Y) + 2;
                     BuildWalls(allWalls, allPoints);
                 }
           
@@ -108,6 +108,8 @@ namespace Offline_task {
                             if (allPoints[k].Y > allPoints[allWalls[i].FirstPoint].Y) ++allPoints[k].Y;
                         }
                     }
+                    maxX = allPoints.Max(a => a.X) + 2;
+                    maxY = allPoints.Max(a => a.Y) + 2;
                     BuildWalls(allWalls, allPoints);
                 }
 
